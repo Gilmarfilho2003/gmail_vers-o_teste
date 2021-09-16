@@ -79,6 +79,6 @@ if do == '2':
     headers = [('User-agent', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.63 Safari/537.36')]
 
     instance.accounts.append(user)
-    instance.get_no_pass_list(senha)
+   
 
     instance.try_gmail()
