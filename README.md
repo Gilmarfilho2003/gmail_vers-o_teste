@@ -1,1 +1,1 @@
-# gmail_vers-o_teste
+# meu brute force de gmail com combinação de senha
