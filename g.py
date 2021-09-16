@@ -41,12 +41,10 @@ class GmailBruteForce():
                     print(("\033[1;31msorry %s " % user + " -> %s \033[1;m" % password ))
 
 print('''
-	==================================
-	|      brute force gmail         |
-	|--------------------------------|
-	|  versão está em teste          |
-	| Por Gilmar Filho               | 
-	|--------------------------------|
+                        
+ __   __ __   __  o |   
+(__| |  )  ) (__( | |_, 
+ __/                    
 	''')
 
 instance = GmailBruteForce()
