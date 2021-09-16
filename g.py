@@ -45,8 +45,7 @@ print('''
  __   __ __   __  o |   
 (__| |  )  ) (__( | |_, 
  __/                    
-	
-  ''')
+''')
 
 instance = GmailBruteForce()
 
@@ -54,6 +53,9 @@ do = input('''
 		    For Favor Escolhe uma opção?
 		1 - Gmail ( Normal com sua wordlsit) 
 		2 - Gmail ( Combinação de senha)
+		3 - Veja O Tutorial de como Criar Sua Wordlsit
+		4 - deixe sua doação no paypal 
+		5 - deixe sua doação pix
                 
 		
 		==> ''')
